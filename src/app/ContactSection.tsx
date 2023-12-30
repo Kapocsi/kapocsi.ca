@@ -2,7 +2,10 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const ContactButton = ({ text, link, children }) => {
   return (
-    <div className="flex flex-row justify-center items-center">
+    <div
+      className="flex flex-row justify-center items-center"
+      style={{ color: "var(--f_med)" }}
+    >
       {children}
       <a className="underline pl-2" href={link}>
         {text}

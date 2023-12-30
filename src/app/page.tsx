@@ -5,7 +5,7 @@ import { ContactSection } from "./ContactSection";
 
 const NamePlate = () => {
   return (
-    <div className="">
+    <div>
       <h1 className="text-9xl pt-20 font-custom">Thomas Kapocsi</h1>
       <h2 className="py-5 text-xl">
         VS Code Hater, Strongly Typed Langauge Lover, Making it all up on the
@@ -17,7 +17,7 @@ const NamePlate = () => {
 
 export default function Home() {
   return (
-    <div className="text-center flex flex-col h-screen mx-auto w-2/3">
+    <div className="text-center flex flex-col h-screen mx-auto w-2/3 ">
       <div className="flex-grow">
         <NamePlate />
       </div>
