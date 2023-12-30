@@ -1,6 +1,13 @@
+import { ReactNode } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
-const ContactButton = ({ text, link, children }) => {
+type Props = {
+  text: string;
+  link: string;
+  children: ReactNode;
+};
+
+const ContactButton = ({ text, link, children }: Props) => {
   return (
     <div
       className="flex flex-row justify-center items-center"
