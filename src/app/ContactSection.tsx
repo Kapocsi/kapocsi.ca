@@ -10,7 +10,7 @@ type Props = {
 const ContactButton = ({ text, link, children }: Props) => {
   return (
     <div
-      className="flex flex-row justify-center items-center"
+      className="flex flex-row justify-center items-center whitespace-nowrap"
       style={{ color: "var(--f_med)" }}
     >
       {children}
