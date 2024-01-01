@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "mysql2": "^3.6.5",
     "next": "14.0.4",
+    "node-html-parser": "^6.1.12",
     "react": "^18",
     "react-dom": "^18",
     "react-dropzone": "^14.2.3",

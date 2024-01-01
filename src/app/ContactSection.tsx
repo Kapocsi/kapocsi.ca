@@ -7,7 +7,7 @@ type Props = {
   children: ReactNode;
 };
 
-const ContactButton = ({ text, link, children }: Props) => {
+function ContactButton({ text, link, children }: Props) {
   return (
     <div
       className="flex flex-row justify-center items-center whitespace-nowrap"
@@ -19,16 +19,16 @@ const ContactButton = ({ text, link, children }: Props) => {
       </a>
     </div>
   );
-};
-export const ContactSection = () => {
+}
+export function ContactSection() {
   return (
     <div>
       <ContactButton text="Kapocsi" link="https://github.com/kapocsi">
         <FaGithub />
       </ContactButton>
       <ContactButton
-        text="thomas-kapocsi-3688b11b0"
-        link="https://www.linkedin.com/in/thomas-kapocsi-3688b11b0/"
+        text="thomas-kapocsi"
+        link="https://www.linkedin.com/in/thomas-kapocsi"
       >
         <FaLinkedin />
       </ContactButton>
@@ -37,4 +37,4 @@ export const ContactSection = () => {
       </ContactButton>
     </div>
   );
-};
+}

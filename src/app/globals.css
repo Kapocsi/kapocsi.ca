@@ -22,6 +22,10 @@ h5 {
   color: var(--f_high);
 }
 
+p {
+  color: var(--f_low);
+}
+
 /*
 @media (prefers-color-scheme: dark) {
   :root {
