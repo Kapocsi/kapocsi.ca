@@ -21,7 +21,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={old_standard_tt.className + " bg-[--background]"}>
+      <body
+        className={old_standard_tt.className + " bg-[--background]"}
+        suppressHydrationWarning={true}
+      >
         <HundredRabbitsThemeDrop>{children}</HundredRabbitsThemeDrop>
       </body>
     </html>

@@ -22,6 +22,10 @@ h5 {
   color: var(--f_high);
 }
 
+table {
+  color: var(--f_med);
+}
+
 p {
   color: var(--f_low);
 }
