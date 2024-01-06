@@ -8,7 +8,7 @@ const pool = mysql.createPool({
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
-  ssl: { ca: "/etc/ssl/certs/ca-certificates.crt" },
+  ssl: process.env.DATABASE_HOST !== "localhost" ? { rejectUnauthorized: true } : undefined,
 });
 
 export default pool;
