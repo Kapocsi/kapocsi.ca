@@ -1,4 +1,5 @@
-import { use, useEffect, useState } from "react";
+export const dynamic = "force-dynamic";
+
 import pool from "@/db";
 import { FieldPacket, RowDataPacket } from "mysql2";
 import Link from "next/link";
@@ -10,9 +11,8 @@ export async function get_articles() {
   return articles;
 }
 
-export default async function Articles() {
+export default async function Article() {
   const articles = await get_articles();
-
   return (
     <table className="table-fixed w-[100%]">
       <thead className="border-[var(--f\_high)] border-b-2">
