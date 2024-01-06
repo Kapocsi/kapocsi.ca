@@ -1,8 +1,18 @@
 export const dynamic = "force-dynamic";
+export const revalidate = 1;
 
 import pool from "@/db";
 import { FieldPacket, RowDataPacket } from "mysql2";
 import Link from "next/link";
+
+export async function getServerSideProps(context: any) {
+  const articles = await get_articles(); // Your dynamic function call
+  return {
+    props: {
+      articles,
+    },
+  };
+}
 
 export async function get_articles() {
   let [articles]: [RowDataPacket[], FieldPacket[]] = await pool.query(
