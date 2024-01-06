@@ -74,8 +74,6 @@ const HundredRabitsDrop = ({ children }: Props) => {
 
         colors[key] = color;
       }
-
-      console.log(colors);
     });
   };
 

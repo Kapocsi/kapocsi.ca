@@ -9,10 +9,7 @@ type Props = {
 
 function ContactButton({ text, link, children }: Props) {
   return (
-    <div
-      className="flex flex-row justify-center items-center whitespace-nowrap"
-      style={{ color: "var(--f_med)" }}
-    >
+    <div className="flex flex-row justify-center items-center whitespace-nowrap" style={{ color: "var(--f_med)" }}>
       {children}
       <a className="underline pl-2" href={link}>
         {text}
@@ -26,10 +23,7 @@ export function ContactSection() {
       <ContactButton text="Kapocsi" link="https://github.com/kapocsi">
         <FaGithub />
       </ContactButton>
-      <ContactButton
-        text="thomas-kapocsi"
-        link="https://www.linkedin.com/in/thomas-kapocsi"
-      >
+      <ContactButton text="thomas-kapocsi" link="https://www.linkedin.com/in/thomas-kapocsi">
         <FaLinkedin />
       </ContactButton>
       <ContactButton text="thomas@kapocsi.ca" link="mailto:thomas@kapocsi.ca">

@@ -25,15 +25,3 @@ h5 {
 table {
   color: var(--f_med);
 }
-
-p {
-  color: var(--f_low);
-}
-
-/*
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-  }
-}
-*/
