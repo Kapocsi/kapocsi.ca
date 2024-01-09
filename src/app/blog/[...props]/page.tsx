@@ -6,8 +6,8 @@ import MathJax from "./mathjax";
 
 export default async function Blogs({ params }: { params: { props: string[] } }) {
   const path = decodeURI(`/blog/${params.props.join("/")}`);
-
-  const [results] = (await pool.query("SELECT data, mime FROM blogs WHERE path = ?", [path])) as RowDataPacket[];
+  const query = "SELECT data, mime FROM blogs WHERE path = ?";
+  const [results] = (await pool.query(query, [path])) as RowDataPacket[];
 
   const blogData = results[0];
   if (!blogData) {
