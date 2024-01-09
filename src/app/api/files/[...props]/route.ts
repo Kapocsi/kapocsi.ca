@@ -7,7 +7,8 @@ export async function GET(request: Request, { params }: { params: { props: strin
   const file_path = "/" + params.props.join("/");
 
   try {
-    const [rows] = (await pool.query("select * from blogs where `path` = ?", file_path)) as RowDataPacket[];
+    const query = "select * from blogs where `path` = ?";
+    const [rows] = (await pool.query(query, file_path)) as RowDataPacket[];
 
     const page = rows[0];
 

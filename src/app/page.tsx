@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-import { ContactSection } from "./ContactSection";
+import { ContactSection } from "@/lib/ContactSection";
 
-import Articles from "./articles";
 import { Suspense } from "react";
+import Articles from "./articles";
 
 const NamePlate = () => {
   return (
@@ -22,9 +22,9 @@ export default function Home() {
       <NamePlate />
       <div className="flex-grow text-left text-lg m:w-1/2 w-3/4">
         <h1 className="pb-2 font-bold text-xl">Blogs</h1>
-        <Suspense>
-          <Articles />
-        </Suspense>
+        {/* <Suspense> */}
+        <Articles />
+        {/* </Suspense> */}
       </div>
       <div className="align-bottom py-5 sm:columns-3 columns-1">
         <ContactSection />
