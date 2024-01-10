@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import pool from "@/db";
 import { FieldPacket, RowDataPacket } from "mysql2";
 
