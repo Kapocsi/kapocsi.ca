@@ -1,7 +1,16 @@
-export const revalidate = 1;
+export const revalidate = 60;
 
 import Link from "next/link";
-import { get_articles } from "./get_articles";
+import pool from "@/db";
+import { FieldPacket, RowDataPacket } from "mysql2";
+
+export async function get_articles() {
+  console.log("HIT");
+  let [articles]: [RowDataPacket[], FieldPacket[]] = await pool.query(
+    "SELECT path, title, date_added FROM blogs where mime like'%text/html%' ORDER BY date_modified DESC; ",
+  );
+  return articles;
+}
 
 export default async function Article() {
   let articles = await get_articles();
