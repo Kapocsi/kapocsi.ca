@@ -22,7 +22,7 @@ export default async function Article() {
   ));
 
   return (
-    <table className="table-fixed w-[100%]">
+    <table className="table-fixed w-[100%] text-left text-lg">
       <thead className="border-[var(--f\_high)] border-b-2">
         <tr>
           <td> Title </td>

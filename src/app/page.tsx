@@ -16,17 +16,10 @@ const NamePlate = () => {
 
 export default function Home() {
   return (
-    <div className="text-center flex flex-col h-screen mx-auto lg:w-2/3 md:w-3/4 md:text-sm items-center">
+    <div className="text-center flex flex-col  mx-auto md:text-sm items-center">
       <NamePlate />
-      <div className="flex-grow text-left text-lg m:w-1/2 w-3/4">
-        <h1 className="pb-2 font-bold text-xl">Blogs</h1>
-        {/* <Suspense> */}
-        <Articles />
-        {/* </Suspense> */}
-      </div>
-      <div className="align-bottom py-5 sm:columns-3 columns-1">
-        <ContactSection />
-      </div>
+      <h1 className="pb-2 font-bold text-xl">Blogs</h1>
+      <Articles />
     </div>
   );
 }
