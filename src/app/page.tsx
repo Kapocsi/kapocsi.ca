@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { ContactSection } from "@/lib/ContactSection";
 import Articles from "./articles";
 
