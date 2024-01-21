@@ -19,7 +19,7 @@ function ContactButton({ text, link, children }: Props) {
 }
 export function ContactSection() {
   return (
-    <div>
+    <div className="text-sm">
       <ContactButton text="Kapocsi" link="https://github.com/kapocsi">
         <FaGithub />
       </ContactButton>
