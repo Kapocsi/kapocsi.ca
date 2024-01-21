@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import mysql from "mysql2/promise";
 
 //mysql://ksfb4u87utz58vxkkh6w:pscale_pw_QTSJ0wSus9pcjs3eMKEzi4YQvsYGrQeBUZ6nvRS5GSa@aws.connect.psdb.cloud/homepage?ssl={"rejectUnauthorized":true}
