@@ -1,6 +1,3 @@
-export const revalidate = 0;
-export const dynamic = "force-dynamic";
-
 import Link from "next/link";
 import pool from "@/db";
 import { FieldPacket, RowDataPacket } from "mysql2";
