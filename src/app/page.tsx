@@ -1,8 +1,4 @@
-import Image from "next/image";
-
 import { ContactSection } from "@/lib/ContactSection";
-
-import { Suspense } from "react";
 import Articles from "./articles";
 
 const NamePlate = () => {
