@@ -9,17 +9,16 @@ type Props = {
 
 function ContactButton({ text, link, children }: Props) {
   return (
-    <div className="flex flex-row justify-center items-center whitespace-nowrap" style={{ color: "var(--f_med)" }}>
-      {children}
-      <a className="underline pl-2" href={link}>
-        {text}
+    <div className="whitespace-nowrap" style={{ color: "var(--f_high)" }}>
+      <a className="underline pl-2 flex flex-row justify-center items-center" href={link}>
+        <div style={{ paddingBottom: 1 + "pt" }}>{children}</div> {text}
       </a>
     </div>
   );
 }
 export function ContactSection() {
   return (
-    <div className="text-sm">
+    <div className="">
       <ContactButton text="Kapocsi" link="https://github.com/kapocsi">
         <FaGithub />
       </ContactButton>
