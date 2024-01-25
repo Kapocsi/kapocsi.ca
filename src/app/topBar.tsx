@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Suspense } from "react";
-import Reset from "./reset_themes.tsx";
 
 export default function TopBar() {
   return (
@@ -23,9 +22,6 @@ export default function TopBar() {
         "
       >
         <Link href="/meta/colophon">Colophon</Link>
-        <Suspense>
-          <Reset></Reset>
-        </Suspense>
       </div>
     </div>
   );
