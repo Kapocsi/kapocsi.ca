@@ -2,9 +2,29 @@
 
 import { useDropzone } from "react-dropzone";
 import React, { ReactNode } from "react";
+import { useEffect } from "react";
 
 interface Props {
   children?: ReactNode;
+}
+
+type Colors = {
+  [key: string]: any;
+  background: null | string;
+  f_high: null | string;
+  f_med: null | string;
+  f_low: null | string;
+  f_inv: null | string;
+  b_high: null | string;
+  b_med: null | string;
+  b_low: null | string;
+  b_inv: null | string;
+};
+
+export function set_colors(colors: Colors) {
+  for (const [key, color] of Object.entries(colors)) {
+    document.documentElement.style.setProperty(`--${key}`, color);
+  }
 }
 
 function get_xml_content(file: File): Promise<Document> {
@@ -38,21 +58,16 @@ function get_xml_content(file: File): Promise<Document> {
   });
 }
 
-type Colors = {
-  [key: string]: any;
-  background: null | string;
-  f_high: null | string;
-  f_med: null | string;
-  f_low: null | string;
-  f_inv: null | string;
-  b_high: null | string;
-  b_med: null | string;
-  b_low: null | string;
-  b_inv: null | string;
-};
-
 const HundredRabitsDrop = ({ children }: Props) => {
+  // check for local storage existing and apply theme
+  useEffect(() => {
+    const colors = JSON.parse(localStorage.getItem("100rColors"));
+    set_colors(colors);
+  }, []);
+
   const onDrop = (acceptedFiles: File[]) => {
+    console.log(acceptedFiles);
+
     get_xml_content(acceptedFiles[0]).then((file) => {
       let colors: Colors = {
         background: null,
@@ -70,16 +85,16 @@ const HundredRabitsDrop = ({ children }: Props) => {
         let element = file.querySelector(`#${key}`);
         if (!element) continue;
         const color = element.getAttribute("fill");
-        document.documentElement.style.setProperty(`--${key}`, color);
-
         colors[key] = color;
       }
+      set_colors(colors);
+      localStorage.setItem("100rColors", JSON.stringify(colors));
     });
   };
 
   const { getRootProps } = useDropzone({
     onDrop,
-    noKeyboard: true,
+    // noKeyboard: true,
     noClick: true,
   });
 

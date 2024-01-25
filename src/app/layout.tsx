@@ -20,12 +20,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <html lang="en">
         <body className={old_standard_tt.className + " bg-[--background] "} suppressHydrationWarning={true}>
           <HundredRabbitsThemeDrop>
-            <div className="min-h-screen flex flex-col ">
+            <div className="min-h-screen flex flex-col">
               <TopBar />
               <div className="flex-grow">
                 <div className="md:w-1/2 p-3 mx-auto">{children}</div>
               </div>
-              <div className="align-bottom py-5 sm:columns-3 columns-1">
+              <div className="align-bottom pd-5 sm:columns-3 columns-1 bg-[var(--b\_high)]">
                 <ContactSection />
               </div>
             </div>

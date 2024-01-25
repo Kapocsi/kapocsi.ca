@@ -7,9 +7,7 @@ const NamePlate = () => {
   return (
     <div className="flex flex-col items-center justify-center ">
       <h1 className="sm:text-7xl text-3xl pt-10 md:pt-20 font-custom">Thomas Kapocsi</h1>
-      <h2 className="text-center py-5 text-sm md:text-xl ">
-        VS Code Hater, Strongly Typed Language Lover, Making it all up on the spot
-      </h2>
+      <h2 className="text-center py-5 text-sm md:text-xl ">I play factorio on my Arch Machine; I am a sterotype</h2>
     </div>
   );
 };
