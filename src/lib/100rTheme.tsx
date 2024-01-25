@@ -61,9 +61,10 @@ function get_xml_content(file: File): Promise<Document> {
 const HundredRabitsDrop = ({ children }: Props) => {
   // check for local storage existing and apply theme
   useEffect(() => {
-    const colors = JSON.parse(localStorage.getItem("100rColors"));
-    if (colors) {
-      set_colors(colors);
+    const l_color = localStorage.getItem("100rColors");
+
+    if (l_color) {
+      set_colors(JSON.parse(l_color as string));
     }
   }, []);
 
