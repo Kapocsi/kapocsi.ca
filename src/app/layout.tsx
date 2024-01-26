@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="flex-grow">
                 <div className="md:w-1/2 p-3 mx-auto">{children}</div>
               </div>
-              <div className="align-bottom pd-5 sm:columns-3 columns-1 bg-[var(--b\_high)]">
+              <div className="align-bottom pd-5 sm:columns-3 columns-1 bg-[var(--b\_high)] py-1">
                 <ContactSection />
               </div>
             </div>
