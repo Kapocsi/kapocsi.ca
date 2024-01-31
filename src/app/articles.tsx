@@ -20,16 +20,19 @@ export default async function Article() {
       <td className="text-right">{data.date_added.toLocaleDateString()}</td>
     </tr>
   ));
-
   return (
-    <table className="table-fixed w-[100%] text-left m:text-lg text-sm">
-      <thead className="border-[var(--f\_high)] border-b-2">
-        <tr>
-          <td> Title </td>
-          <td className="text-right"> Date Published </td>
-        </tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </table>
+    <>
+      <table className="table-fixed w-[100%] text-left m:text-lg text-sm">
+        <thead className="border-[var(--f\_high)] border-b-2">
+          <tr>
+            <td> Title </td>
+            <td className="text-right"> Date Published </td>
+          </tr>
+        </thead>
+
+        <tbody>{rows}</tbody>
+      </table>
+      {articles.length === 0 ? <h2 className="py-2  text-[var(--f\_med)]">No Content Yet ;)</h2> : <> </>}
+    </>
   );
 }
