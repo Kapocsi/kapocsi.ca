@@ -1,5 +1,5 @@
 export const dynamic = "force-dynamic";
-export const revalidate = 3600;
+export const revalidate = 10;
 
 import { ContactSection } from "@/lib/ContactSection";
 import Articles from "./articles";
