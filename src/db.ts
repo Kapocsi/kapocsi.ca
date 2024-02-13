@@ -6,7 +6,6 @@ import * as schema from "../db/schema";
 import dotenv from "dotenv";
 dotenv.config();
 
-
 export const auth = {
   host: process.env.DATABASE_HOST as string,
   user: process.env.DATABASE_USERNAME as string,
@@ -15,9 +14,8 @@ export const auth = {
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
-  // ssl: process.env.DATABASE_HOST !== "localhost" ? { rejectUnauthorized: true } : undefined,
+  ssl: process.env.DATABASE_HOST !== "localhost" ? { rejectUnauthorized: true } : undefined,
 };
-
 
 const pool = mysql.createPool(auth);
 
