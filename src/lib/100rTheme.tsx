@@ -69,8 +69,6 @@ const HundredRabitsDrop = ({ children }: Props) => {
   }, []);
 
   const onDrop = (acceptedFiles: File[]) => {
-    console.log(acceptedFiles);
-
     get_xml_content(acceptedFiles[0]).then((file) => {
       let colors: Colors = {
         background: null,
