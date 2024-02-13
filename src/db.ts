@@ -14,7 +14,7 @@ export const auth = {
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
-  // ssl: process.env.DATABASE_HOST !== "localhost" ? { rejectUnauthorized: true } : undefined,
+  ssl: process.env.DATABASE_HOST !== "localhost" ? { rejectUnauthorized: true } : undefined,
 };
 
 const pool = mysql.createPool(auth);
