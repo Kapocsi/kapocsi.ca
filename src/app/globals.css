@@ -12,16 +12,32 @@
   --b_med: #666666;
   --b_low: #333333;
   --b_inv: #fc533e;
+
+  --foreground: var(--f_high);
+  --card: var(--background);
+  --card-foreground: var(--f_high);
+  --popover: var(--background);
+  --popover-foreground: var(--f_high);
+  --primary: var(--f_high);
+  --primary-foreground: var(--background); /* Assuming you want the contrast */
+  --secondary: var(--b_med);
+  --secondary-foreground: var(--f_high);
+  --muted: var(--b_med);
+  --muted-foreground: var(--f_med);
+  --accent: var(--b_med);
+  --accent-foreground: var(--f_high);
+  --destructive: var(--b_high);
+  --destructive-foreground: var(--f_high);
+  --border: var(--b_med);
+  --input: var(--b_med);
+  --ring: var(--f_inv); /* Assuming ring is a special highlight or focus, using --f_inv for contrast */
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  color: var(--f_high);
-}
-
-table {
-  color: var(--f_med);
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

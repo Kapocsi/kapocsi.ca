@@ -1,0 +1,1 @@
+ALTER TABLE `blogs` MODIFY COLUMN `path` varchar(100) NOT NULL;

@@ -9,7 +9,6 @@ export async function GET(request: Request, { params }: { params: { props: strin
   try {
     const query = "select * from blogs where `path` = ?";
     const [rows] = (await pool.query(query, file_path)) as RowDataPacket[];
-
     const page = rows[0];
 
     return new NextResponse(page.data, {
@@ -20,6 +19,7 @@ export async function GET(request: Request, { params }: { params: { props: strin
       },
     });
   } catch (error) {
+    console.log(error);
     return notFound();
   }
 }
