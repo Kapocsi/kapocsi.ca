@@ -18,9 +18,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Use environment variable
-        run: echo "Database URL is $DATABASE_URL"
+        run: echo "Database URL is $DATABASE_HOST"
         env:
-          DATABASE_URL: ${{ env.DATABASE_URL }}
+          DATABASE_URL: ${{ env.DATABASE_HOST }}
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
