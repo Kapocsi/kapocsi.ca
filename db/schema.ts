@@ -80,7 +80,7 @@ export const blogs = mysqlTable(
     dateAdded: datetime("date_added", { mode: "string" }).default(sql`CURRENT_TIMESTAMP()`),
     title: varchar("title", { length: 255 }).default("NULL"),
     longblobType: longblob("data"),
-    path: varchar("path", { length: 100 }).default("NULL"),
+    path: varchar("path", { length: 100 }).notNull(),
     mime: varchar("mime", { length: 255 }).default("NULL"),
     publish_state: mysqlEnum("publish_state", ["main", "pre-publish"]).default("main"),
   },
