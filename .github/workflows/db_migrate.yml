@@ -17,10 +17,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Use environment variable
-        run: echo "Database URL is $DATABASE_HOST"
-        env:
-          DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
@@ -28,4 +24,10 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm i
-      - run: npx tsx db/migrate.ts
+      - name: "Run Migration"
+        env:
+          DATABASE_NAME: ${{env.DATABASE_NAME}}
+          DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
+          DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
+          DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
+        run: npx tsx db/migrate.ts
