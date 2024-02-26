@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "4ee4b8cd-d47f-4b89-8b54-74179ea6d4aa",
+  "id": "300bf756-638c-4772-8e71-bb26e4f71bb1",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "account": {
@@ -121,7 +121,7 @@
           "primaryKey": false,
           "notNull": false,
           "autoincrement": false,
-          "default": "'current_timestamp()'"
+          "default": "CURRENT_TIMESTAMP()"
         },
         "date_added": {
           "name": "date_added",
@@ -129,7 +129,7 @@
           "primaryKey": false,
           "notNull": false,
           "autoincrement": false,
-          "default": "'current_timestamp()'"
+          "default": "CURRENT_TIMESTAMP()"
         },
         "title": {
           "name": "title",

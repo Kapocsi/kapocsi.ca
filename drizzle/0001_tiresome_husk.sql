@@ -13,6 +13,16 @@ CREATE TABLE `account` (
 	CONSTRAINT `account_provider_providerAccountId_pk` PRIMARY KEY(`provider`,`providerAccountId`)
 );
 --> statement-breakpoint
+CREATE TABLE `blogs` (
+	`date_modified` datetime DEFAULT CURRENT_TIMESTAMP(),
+	`date_added` datetime DEFAULT CURRENT_TIMESTAMP(),
+	`title` varchar(255) DEFAULT 'NULL',
+	`data` longblob,
+	`path` varchar(100) DEFAULT 'NULL',
+	`mime` varchar(255) DEFAULT 'NULL',
+	CONSTRAINT `path` UNIQUE(`path`)
+);
+--> statement-breakpoint
 CREATE TABLE `session` (
 	`sessionToken` varchar(255) NOT NULL,
 	`userId` varchar(255) NOT NULL,
@@ -36,6 +46,5 @@ CREATE TABLE `verificationToken` (
 	CONSTRAINT `verificationToken_identifier_token_pk` PRIMARY KEY(`identifier`,`token`)
 );
 --> statement-breakpoint
-ALTER TABLE `blogs` MODIFY COLUMN `data` longblob;--> statement-breakpoint
 ALTER TABLE `account` ADD CONSTRAINT `account_userId_user_id_fk` FOREIGN KEY (`userId`) REFERENCES `user`(`id`) ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
 ALTER TABLE `session` ADD CONSTRAINT `session_userId_user_id_fk` FOREIGN KEY (`userId`) REFERENCES `user`(`id`) ON DELETE cascade ON UPDATE no action;

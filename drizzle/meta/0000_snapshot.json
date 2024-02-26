@@ -3,76 +3,11 @@
   "prevId": "",
   "version": "5",
   "dialect": "mysql",
-  "tables": {
-    "blogs": {
-      "name": "blogs",
-      "columns": {
-        "date_modified": {
-          "default": "'current_timestamp()'",
-          "autoincrement": false,
-          "name": "date_modified",
-          "type": "datetime",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "date_added": {
-          "default": "'current_timestamp()'",
-          "autoincrement": false,
-          "name": "date_added",
-          "type": "datetime",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "title": {
-          "default": "'NULL'",
-          "autoincrement": false,
-          "name": "title",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "data": {
-          "default": "'NULL'",
-          "autoincrement": false,
-          "name": "data",
-          "type": "longblob",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "path": {
-          "default": "'NULL'",
-          "autoincrement": false,
-          "name": "path",
-          "type": "varchar(100)",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "mime": {
-          "default": "'NULL'",
-          "autoincrement": false,
-          "name": "mime",
-          "type": "varchar(255)",
-          "primaryKey": false,
-          "notNull": false
-        }
-      },
-      "compositePrimaryKeys": {},
-      "indexes": {},
-      "foreignKeys": {},
-      "uniqueConstraints": {
-        "path": {
-          "name": "path",
-          "columns": [
-            "path"
-          ]
-        }
-      }
-    }
-  },
+  "tables": {},
   "schemas": {},
   "_meta": {
+    "columns": {},
     "schemas": {},
-    "tables": {},
-    "columns": {}
+    "tables": {}
   }
 }

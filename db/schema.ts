@@ -1,5 +1,6 @@
 import { int, timestamp, mysqlTable, primaryKey, varchar, unique, datetime, customType } from "drizzle-orm/mysql-core";
 import type { AdapterAccount } from "@auth/core/adapters";
+import { sql } from "drizzle-orm";
 
 const longblob = customType<{ data: string }>({
   dataType() {
@@ -65,8 +66,8 @@ export const verificationTokens = mysqlTable(
 export const blogs = mysqlTable(
   "blogs",
   {
-    dateModified: datetime("date_modified", { mode: "string" }).default("current_timestamp()"),
-    dateAdded: datetime("date_added", { mode: "string" }).default("current_timestamp()"),
+    dateModified: datetime("date_modified", { mode: "string" }).default(sql`CURRENT_TIMESTAMP()`),
+    dateAdded: datetime("date_added", { mode: "string" }).default(sql`CURRENT_TIMESTAMP()`),
     title: varchar("title", { length: 255 }).default("NULL"),
     longblobType: longblob("data"),
     path: varchar("path", { length: 100 }).default("NULL"),
