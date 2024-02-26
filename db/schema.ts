@@ -1,4 +1,14 @@
-import { int, timestamp, mysqlTable, primaryKey, varchar, unique, datetime, customType } from "drizzle-orm/mysql-core";
+import {
+  int,
+  timestamp,
+  mysqlTable,
+  primaryKey,
+  varchar,
+  unique,
+  datetime,
+  customType,
+  mysqlEnum,
+} from "drizzle-orm/mysql-core";
 import type { AdapterAccount } from "@auth/core/adapters";
 import { sql } from "drizzle-orm";
 
@@ -72,6 +82,7 @@ export const blogs = mysqlTable(
     longblobType: longblob("data"),
     path: varchar("path", { length: 100 }).default("NULL"),
     mime: varchar("mime", { length: 255 }).default("NULL"),
+    publish_state: mysqlEnum("publish_state", ["main", "pre-publish"]).default("main"),
   },
   (table) => {
     return {

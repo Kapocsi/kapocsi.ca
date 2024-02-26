@@ -15,6 +15,13 @@
       "when": 1708890227563,
       "tag": "0001_tiresome_husk",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1708918224367,
+      "tag": "0002_quick_wrecking_crew",
+      "breakpoints": true
     }
   ]
 }
