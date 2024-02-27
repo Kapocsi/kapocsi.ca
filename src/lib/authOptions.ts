@@ -7,6 +7,8 @@ import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { db } from "@/db";
 import { Adapter } from "next-auth/adapters";
 
+import { sendVerificationRequest } from "./email_sender";
+
 export const authOptions = {
   adapter: DrizzleAdapter(db) as Adapter,
   providers: [
@@ -21,6 +23,7 @@ export const authOptions = {
     EmailProvider({
       server: process.env.EMAIL_SERVER,
       from: "Kapocsi <auth@kapocsi.ca>",
+      sendVerificationRequest,
     }),
   ],
   pages: {

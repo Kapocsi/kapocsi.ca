@@ -1,0 +1,1 @@
+ALTER TABLE `turnStilePass` ADD PRIMARY KEY(`identifier`);

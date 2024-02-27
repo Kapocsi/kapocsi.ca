@@ -8,6 +8,7 @@ import {
   datetime,
   customType,
   mysqlEnum,
+  boolean,
 } from "drizzle-orm/mysql-core";
 import type { AdapterAccount } from "@auth/core/adapters";
 import { sql } from "drizzle-orm";
@@ -72,6 +73,10 @@ export const verificationTokens = mysqlTable(
     compoundKey: primaryKey({ columns: [vt.identifier, vt.token] }),
   }),
 );
+
+export const turnStilePass = mysqlTable("turnStilePass", {
+  identifier: varchar("identifier", { length: 255 }).notNull().primaryKey(),
+});
 
 export const blogs = mysqlTable(
   "blogs",

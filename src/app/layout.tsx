@@ -5,6 +5,7 @@ import HundredRabbitsThemeDrop from "@/lib/100rTheme";
 import { ContactSection } from "@/lib/ContactSection";
 import TopBar from "./topBar";
 import { Provider } from "./provider";
+import Script from "next/script";
 const old_standard_tt = Old_Standard_TT({
   subsets: ["latin-ext"],
   weight: "400",
