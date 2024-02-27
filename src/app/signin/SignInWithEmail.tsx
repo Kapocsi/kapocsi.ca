@@ -78,7 +78,7 @@ export function SignInWithEmail() {
           />
           <FormField
             name="token"
-            render={({ _ }) => (
+            render={({ field }) => (
               <FormItem className="">
                 <TurnStile setToken={setToken}></TurnStile>
                 <FormMessage />

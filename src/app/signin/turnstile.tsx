@@ -1,7 +1,7 @@
 import { Skeleton } from "@/components/ui/skeleton";
 import Script from "next/script";
 
-import { SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect } from "react";
 
 type RenderParameters = {
   sitekey: string;

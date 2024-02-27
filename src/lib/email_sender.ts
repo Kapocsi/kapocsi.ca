@@ -3,8 +3,9 @@ import { createTransport } from "nodemailer";
 import { turnStilePass } from "../../db/schema";
 import { count, eq } from "drizzle-orm";
 import { Provider } from "react";
+import { EmailProvider, EmailProviderType } from "next-auth/providers/email";
 
-export async function sendVerificationRequest(props: { identifier: string; url: string; provider: Provider }) {
+export async function sendVerificationRequest(props: { identifier: string; url: string; provider: any }) {
   const { identifier, url, provider } = props;
 
   const [response] = await db
