@@ -5,7 +5,8 @@ import HundredRabbitsThemeDrop from "@/lib/100rTheme";
 import { ContactSection } from "@/lib/ContactSection";
 import TopBar from "./topBar";
 import { Provider } from "./provider";
-import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 const old_standard_tt = Old_Standard_TT({
   subsets: ["latin-ext"],
   weight: "400",
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <>
       <html lang="en">
         <body className={old_standard_tt.className + " bg-[--background] "} suppressHydrationWarning={true}>
+          <SpeedInsights />
           <Provider>
             <HundredRabbitsThemeDrop>
               <div className="min-h-screen flex flex-col">
