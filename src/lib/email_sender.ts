@@ -35,11 +35,11 @@ function html(params: { url: string; host: string }) {
 
   const color = {
     background: "#f9f9f9",
-    text: "#fffff",
+    text: "#000",
     mainBackground: "#fff",
     buttonBackground: "#346df1",
     buttonBorder: "#346df1",
-    buttonText: "Sign In",
+    buttonText: "#ffff",
   };
 
   return `
