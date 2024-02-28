@@ -1,25 +1,9 @@
-import { db } from "@/db";
 import { createTransport } from "nodemailer";
-import { turnStilePass } from "../../db/schema";
-import { count, eq } from "drizzle-orm";
-import { Provider } from "react";
-import { EmailProvider, EmailProviderType } from "next-auth/providers/email";
 
 export async function sendVerificationRequest(props: { identifier: string; url: string; provider: any }) {
   const { identifier, url, provider } = props;
 
-  const [response] = await db
-    .select({
-      count: count(),
-    })
-    .from(turnStilePass)
-    .where(eq(turnStilePass.identifier, identifier));
-
-  if (response.count <= 0) {
-    throw new Error("Failed To Verify Token");
-  }
-
-  await db.delete(turnStilePass).where(eq(turnStilePass.identifier, identifier));
+  console.log("Sending Email");
 
   const { host } = new URL(url);
   const transport = createTransport(provider.server);

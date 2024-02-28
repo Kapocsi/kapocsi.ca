@@ -9,10 +9,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Button } from "@/components/ui/button";
 import { FaEnvelopeOpen } from "react-icons/fa";
 import TurnStile from "./turnstile";
-import { verify_token } from "./email_server";
 import { useMemo, useState } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
-import { redirect } from "next/navigation";
 
 type RenderParameters = {
   sitekey: string;
@@ -48,15 +45,7 @@ export function SignInWithEmail() {
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    verify_token(values).then((t) => {
-      if (t === "Pass") {
-        signIn("email", { email: values.auth_email });
-      }
-      if (t === "Fail") {
-        form.setError("token", { type: "custom", message: "Failed To Verify Your Token womp. womp." });
-      }
-    });
+    signIn("email", { email: values.auth_email }, { turnstile: values.token });
   }
 
   return (

@@ -74,10 +74,6 @@ export const verificationTokens = mysqlTable(
   }),
 );
 
-export const turnStilePass = mysqlTable("turnStilePass", {
-  identifier: varchar("identifier", { length: 255 }).notNull().primaryKey(),
-});
-
 export const blogs = mysqlTable(
   "blogs",
   {
