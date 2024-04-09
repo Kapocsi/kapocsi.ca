@@ -3,6 +3,7 @@ export const revalidate = 10;
 
 import { ContactSection } from "@/lib/ContactSection";
 import Articles from "./articles";
+import PlanetScale from "@/lib/planetscale";
 
 const NamePlate = () => {
   return (
@@ -18,7 +19,8 @@ export default function Home() {
     <div className="text-center flex flex-col  mx-auto md:text-sm items-center">
       <NamePlate />
       <h1 className="pb-2 font-bold text-xl">Blogs</h1>
-      <Articles />
+      <PlanetScale />
+      {/* <Articles /> */}
     </div>
   );
 }

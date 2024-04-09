@@ -5,6 +5,7 @@ import { OAuthSignIn } from "./OAuthSignIn";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { authOptions } from "@/lib/authOptions";
+import PlanetScale from "@/lib/planetscale";
 
 export default async function Page() {
   const session = await getServerSession(authOptions);
@@ -23,6 +24,8 @@ export default async function Page() {
       </div>
     </div>
   );
+
+  return <PlanetScale></PlanetScale>;
 
   return (
     <div className="grid content-center h-max gap-6">
