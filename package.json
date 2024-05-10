@@ -24,7 +24,7 @@
     "lucide-react": "^0.340.0",
     "mathjax-full": "^3.2.2",
     "mysql2": "^3.9.2",
-    "next": "14.0.4",
+    "next": "^14.2.3",
     "next-auth": "^4.24.5",
     "node-html-parser": "^6.1.12",
     "nodemailer": "^6.9.10",
