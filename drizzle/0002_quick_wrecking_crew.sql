@@ -1,1 +1,0 @@
-ALTER TABLE `blogs` ADD `publish_state` enum('main','pre-publish') DEFAULT 'main';
